@@ -8,4 +8,4 @@ El servidor keycloak se sirve ejecutando "./standalone.sh -Djboss.socket.binding
 
 El proyecto de springboot se ejecuta mediante "mvn -e clean spring-boot:run", le pongo el flag -e para que muestre algo al menos... Ahi es donde se puede ver que se queja de que no encuentra la ruta al entrar en localhost:8081 (servidor springboot), que deberia mostrar el html "external", que aun no hace nada con keycloak.
 
-En el commit del directorio Spring-boot explico algo sobre la configuracion que tiene.
+El proyecto de springboot tiene spring-boot/src/main/resources/application.properties configurado para servirse en el puerto 8081, para encontrar el servidor de keycloak en http://localhost:8180/auth, y conectarse al realm "myrealm" como client "login-app".
